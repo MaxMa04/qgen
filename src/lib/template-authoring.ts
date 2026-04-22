@@ -105,6 +105,8 @@ const defaultTheme = {
   toneLabel: "Agent-authored template",
 };
 
+// Wichtig: In generierter Copy und Metadaten echte Umlaute verwenden, also ä/ö/ü/ß statt ae/oe/ue/ss,
+// außer ein technischer Identifier oder Dateiname verlangt ausdrücklich ASCII.
 const defaultCopy = {
   docTitle: "Angebot",
   headline: "Angebot für {{recipient.company}}",

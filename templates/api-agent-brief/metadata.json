@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "authoring": {
     "mode": "agent-first",
-    "prompt": "tone: api flow\nlayout: split\naccent: #b45309\nheadline: API-Briefing fuer {{recipient.company}}\nintro: Diese Vorlage wurde ueber den HTTP-Endpunkt fuer agent-first Template-Authoring erzeugt.\ncallout-title: API Status\ncallout-body: {{modeLabel}} | Erstmonat {{totalFirstMonth_money}}\nnotes-title: API Hinweis\nnotes-body: Route und Dateiausgabe wurden end-to-end gegen den laufenden Next-Server verifiziert.",
+    "prompt": "tone: api flow\nlayout: split\naccent: #b45309\nheadline: API-Briefing für {{recipient.company}}\nintro: Diese Vorlage wurde über den HTTP-Endpunkt für agent-first Template-Authoring erzeugt.\ncallout-title: API Status\ncallout-body: {{modeLabel}} | Erstmonat {{totalFirstMonth_money}}\nnotes-title: API Hinweis\nnotes-body: Route und Dateiausgabe wurden end-to-end gegen den laufenden Next-Server verifiziert.",
     "baseTemplateId": "daze-standard",
     "directives": {
       "accent": "#b45309",
@@ -16,8 +16,8 @@
       "layout": "split",
       "tone": "api flow",
       "doc-title": "API Agent Brief Dokument",
-      "headline": "API-Briefing fuer {{recipient.company}}",
-      "intro": "Diese Vorlage wurde ueber den HTTP-Endpunkt fuer agent-first Template-Authoring erzeugt.",
+      "headline": "API-Briefing für {{recipient.company}}",
+      "intro": "Diese Vorlage wurde über den HTTP-Endpunkt für agent-first Template-Authoring erzeugt.",
       "callout-title": "API Status",
       "callout-body": "{{modeLabel}} | Erstmonat {{totalFirstMonth_money}}",
       "notes-title": "API Hinweis",

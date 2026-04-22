@@ -107,8 +107,10 @@ node ./scripts/qgen.mjs create-template-from-prompt \
   --id agent-brief \
   --from invoice-standard \
   --out ./generated/agent-brief/authoring-preview \
-  --prompt $'tone: ops briefing\nlayout: spotlight\naccent: #0f766e\nheadline: Rollout-Briefing fuer {{recipient.company}}\nintro: Diese agentisch erstellte Vorlage fasst Angebot und Rollout-Rahmen zusammen.\nadd-field: recipient.department:string!'
+  --prompt $'tone: ops briefing\nlayout: spotlight\naccent: #0f766e\nheadline: Rollout-Briefing für {{recipient.company}}\nintro: Diese agentisch erstellte Vorlage fasst Angebot und Rollout-Rahmen zusammen.\nadd-field: recipient.department:string!'
 ```
+
+Wichtig: In Texten, Templates, JSON-Metadaten und Prompt-Copy immer echte Umlaute schreiben, also `ä`, `ö`, `ü`, `Ä`, `Ö`, `Ü`, `ß` statt `ae`, `oe`, `ue`, `ss`, außer ein technischer Identifier verlangt ausdrücklich ASCII.
 
 Das erzeugt oder aktualisiert:
 
