@@ -111,6 +111,7 @@ node ./scripts/qgen.mjs create-template-from-prompt \
 ```
 
 Wichtig: In Texten, Templates, JSON-Metadaten und Prompt-Copy immer echte Umlaute schreiben, also `ä`, `ö`, `ü`, `Ä`, `Ö`, `Ü`, `ß` statt `ae`, `oe`, `ue`, `ss`, außer ein technischer Identifier verlangt ausdrücklich ASCII.
+Ebenfalls wichtig für die Template-Authoring-Pipeline: Preis-Tabellen nicht eng setzen. Zwischen den Spalten bewusst mehr horizontalen Abstand lassen, besonders vor numerischen Preis-Spalten, damit das Angebot nicht gequetscht wirkt.
 
 Das erzeugt oder aktualisiert:
 

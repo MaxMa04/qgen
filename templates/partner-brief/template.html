@@ -20,9 +20,11 @@
     .headline h2 { margin:0 0 8px; font-size:28px; }
     .headline p { margin:0; color:#4b5563; }
     table { width:100%; border-collapse:collapse; margin-top:18px; }
-    th, td { border-bottom:1px solid #d1d5db; padding:10px 8px; vertical-align:top; }
+    th, td { border-bottom:1px solid #d1d5db; padding:12px 16px; vertical-align:top; }
     th { text-align:left; font-size:12px; text-transform:uppercase; color:#6b7280; letter-spacing:0.06em; }
-    .num { text-align:right; white-space:nowrap; }
+    th:first-child, td:first-child { padding-left:0; }
+    th:last-child, td:last-child { padding-right:0; }
+    .num { text-align:right; white-space:nowrap; padding-left:24px; }
     .summary { width: 320px; margin-left:auto; margin-top:28px; break-inside: avoid; page-break-inside: avoid; }
     .summary-row { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #e5e7eb; }
     .summary-row.total { font-weight:700; font-size:18px; color:#111827; }

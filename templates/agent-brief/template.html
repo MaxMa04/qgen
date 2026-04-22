@@ -45,9 +45,11 @@
     .fact:first-child { border-top: 0; padding-top: 0; }
     .fact strong { color: var(--accent-strong); text-align: right; }
     table { width: 100%; border-collapse: collapse; }
-    th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); padding: 0 0 10px; border-bottom: 1px solid var(--line); }
-    td { padding: 14px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
-    .num { text-align: right; white-space: nowrap; }
+    th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); padding: 0 16px 10px; border-bottom: 1px solid var(--line); }
+    td { padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th:first-child, td:first-child { padding-left: 0; }
+    th:last-child, td:last-child { padding-right: 0; }
+    .num { text-align: right; white-space: nowrap; padding-left: 28px; }
     .totals { width: min(100%, 360px); margin-left: auto; border-radius: 22px; overflow: hidden; border: 1px solid var(--line); break-inside: avoid; page-break-inside: avoid; }
     .totals-row { display: flex; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--line); background: var(--paper); }
     .totals-row.highlight { background: var(--accent-strong); color: white; font-size: 18px; font-weight: 700; }

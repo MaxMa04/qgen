@@ -25,10 +25,12 @@
     .callout { border-radius: 18px; background: #fff6db; color: #8a5b00; padding: 18px; border: 1px solid #f0d58a; }
     .callout strong { display: block; font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 10px; }
     table { width: 100%; border-collapse: collapse; margin-top: 28px; }
-    th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: #64748b; padding: 0 0 10px; border-bottom: 1px solid #cbd5e1; }
-    td { padding: 14px 0; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+    th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: #64748b; padding: 0 16px 10px; border-bottom: 1px solid #cbd5e1; }
+    td { padding: 14px 16px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+    th:first-child, td:first-child { padding-left: 0; }
+    th:last-child, td:last-child { padding-right: 0; }
     .muted { color: #64748b; }
-    .num { text-align: right; white-space: nowrap; }
+    .num { text-align: right; white-space: nowrap; padding-left: 28px; }
     .totals { margin-top: 26px; margin-left: auto; width: 360px; border: 1px solid #dbe2ea; border-radius: 20px; overflow: hidden; break-inside: avoid; page-break-inside: avoid; }
     .totals-row { display: flex; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: 1px solid #dbe2ea; background: #ffffff; }
     .totals-row.strong { font-weight: 700; }

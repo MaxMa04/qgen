@@ -77,6 +77,7 @@ node ./scripts/qgen.mjs create-template-from-prompt \
 ```
 
 Wichtig: In Copy, Templates, JSON-Metadaten und Prompts immer echte Umlaute verwenden, also `ä`, `ö`, `ü`, `Ä`, `Ö`, `Ü`, `ß` statt ASCII-Ersatz wie `ae`, `oe`, `ue`, `ss`, außer ein externer Identifier verlangt explizit ASCII.
+Außerdem Preis-Tabellen nicht zu eng setzen: horizontales Padding zwischen den Spalten bewusst großzügig halten, besonders vor Mengen-, Einzelpreis- und Gesamt-Spalten.
 
 Die Preview liegt standardmäßig unter `generated/<template-id>/authoring-preview/` mit:
 
