@@ -2,6 +2,8 @@
 
 DAZE Quote Generator MVP auf Basis von Next.js 16 + TypeScript.
 
+Ausführliche Doku: [`docs/QGEN-DOCUMENTATION.md`](./docs/QGEN-DOCUMENTATION.md)
+
 ## Features
 - `templates/<id>/` für filesystem-basierte Templates mit `metadata.json`, `schema.json` und `template.html`
 - Zweites Beispieltemplate `invoice-standard` als Beleg für das echte Dateisystem-Template-Modell
