@@ -1,0 +1,37 @@
+{
+  "name": "qgen",
+  "version": "0.1.0",
+  "private": true,
+  "bin": {
+    "qgen": "./scripts/qgen.mjs"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "generate:sample": "node ./scripts/generate-sample.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "commander": "^14.0.3",
+    "date-fns": "^4.1.0",
+    "docx-templates": "^4.15.0",
+    "jszip": "^3.10.1",
+    "next": "16.2.4",
+    "puppeteer": "^24.42.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.4",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

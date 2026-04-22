@@ -1,0 +1,6 @@
+{
+  "id": "invoice-standard",
+  "name": "Invoice Standard / Klartext",
+  "description": "Nüchternes Rechnungs- und Angebotslayout mit klarer Summenspalte, Leistungsblöcken und hervorgehobenen Zahlungswerten.",
+  "version": "0.1.0"
+}

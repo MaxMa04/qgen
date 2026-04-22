@@ -1,0 +1,36 @@
+{
+  "id": "agent-brief",
+  "name": "Agent Brief",
+  "description": "Agent Brief template generated from a prompt.",
+  "version": "0.1.1",
+  "authoring": {
+    "mode": "agent-first",
+    "prompt": "tone: delivery brief\nlayout: compact\naccent: #7c3aed\nnotes-title: Betriebsnotizen\nnotes-body: Die gepatchte Version haelt denselben agent-first Workflow bei, erzeugt aber eine kompaktere Seite und aktualisierte Copy.\ncallout-body: {{modeLabel}} | Monatlich {{totalRecurring_money}} | Department {{recipient.department}}\noptional-field: recipient.department\nadd-field: sender.success_manager_email:string\nclosing: Rueckfragen an {{sender.success_manager_email}} oder {{sender.email}}.",
+    "baseTemplateId": "invoice-standard",
+    "directives": {
+      "accent": "#7c3aed",
+      "accent-strong": "#0f172a",
+      "surface": "#ecfeff",
+      "shell": "#e2e8f0",
+      "ink": "#0f172a",
+      "layout": "compact",
+      "tone": "delivery brief",
+      "doc-title": "Agent Brief",
+      "headline": "Rollout-Briefing fuer {{recipient.company}}",
+      "intro": "Diese agentisch erstellte Vorlage fasst Angebot, Rollout-Rahmen und die naechsten Schritte in einer ruhigeren Briefing-Optik zusammen.",
+      "callout-title": "Rollout Snapshot",
+      "callout-body": "{{modeLabel}} | Monatlich {{totalRecurring_money}} | Department {{recipient.department}}",
+      "notes-title": "Betriebsnotizen",
+      "notes-body": "Die gepatchte Version haelt denselben agent-first Workflow bei, erzeugt aber eine kompaktere Seite und aktualisierte Copy.",
+      "closing": "Rueckfragen an {{sender.success_manager_email}} oder {{sender.email}}.",
+      "add-field": [
+        "sender.success_manager_email:string"
+      ],
+      "remove-field": [],
+      "require-field": [],
+      "optional-field": [
+        "recipient.department"
+      ]
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "qgen://templates/telegram-agent-brief-2/schema.json",
+  "title": "Telegram Agent Brief 2 Input",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "offer_number",
+    "date",
+    "valid_until",
+    "recipient",
+    "license",
+    "setup",
+    "sender"
+  ],
+  "properties": {
+    "offer_number": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "valid_until": {
+      "type": "string",
+      "format": "date"
+    },
+    "recipient": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "company",
+        "contact_person",
+        "street",
+        "zip_city"
+      ],
+      "properties": {
+        "company": {
+          "type": "string"
+        },
+        "contact_person": {
+          "type": "string"
+        },
+        "street": {
+          "type": "string"
+        },
+        "zip_city": {
+          "type": "string"
+        },
+        "department": {
+          "type": "string"
+        }
+      }
+    },
+    "license": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "price_monthly"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "price_monthly": {
+          "type": "number"
+        },
+        "discount_percent": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "discount_label": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "setup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "enabled",
+        "price",
+        "description"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "price": {
+          "type": "number"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "sender": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "company",
+        "address_line1",
+        "address_line2",
+        "country",
+        "ust_id",
+        "phone",
+        "email",
+        "web",
+        "signee"
+      ],
+      "properties": {
+        "company": {
+          "type": "string"
+        },
+        "address_line1": {
+          "type": "string"
+        },
+        "address_line2": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "ust_id": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "web": {
+          "type": "string"
+        },
+        "signee": {
+          "type": "string"
+        }
+      }
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "summary": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "summary"
+      ]
+    }
+  }
+}

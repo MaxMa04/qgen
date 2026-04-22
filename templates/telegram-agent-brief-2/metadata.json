@@ -1,0 +1,35 @@
+{
+  "id": "telegram-agent-brief-2",
+  "name": "Telegram Agent Brief 2",
+  "description": "Create a modern service offer template for AI workflow consulting",
+  "version": "0.1.0",
+  "authoring": {
+    "mode": "agent-first",
+    "prompt": "Create a modern service offer template for AI workflow consulting.\n@tone: sharp and premium\n@layout: spotlight\n@accent: #5B5BD6\n@accent-strong: #2F2FA2\n@headline: AI workflow consulting proposal\n@callout-title: Scope snapshot\n@callout-body: Includes setup, iteration loops and operational handoff.\n@notes-title: Delivery model\n@notes-body: Async-first collaboration with weekly decision checkpoints.\n@closing: Reply with go and we schedule kickoff within 3 business days.\n@add-field: project.summary:string!\n@add-field: recipient.department:string\n",
+    "baseTemplateId": "daze-standard",
+    "directives": {
+      "accent": "#5b5bd6",
+      "accent-strong": "#2f2fa2",
+      "surface": "#eff6ff",
+      "shell": "#e2e8f0",
+      "ink": "#0f172a",
+      "layout": "spotlight",
+      "tone": "sharp and premium",
+      "doc-title": "Telegram Agent Brief 2 Dokument",
+      "headline": "AI workflow consulting proposal",
+      "intro": "Create a modern service offer template for AI workflow consulting.",
+      "callout-title": "Scope snapshot",
+      "callout-body": "Includes setup, iteration loops and operational handoff.",
+      "notes-title": "Delivery model",
+      "notes-body": "Async-first collaboration with weekly decision checkpoints.",
+      "closing": "Reply with go and we schedule kickoff within 3 business days.",
+      "add-field": [
+        "project.summary:string!",
+        "recipient.department:string"
+      ],
+      "remove-field": [],
+      "require-field": [],
+      "optional-field": []
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "telegram-agent-brief",
+  "name": "Telegram Agent Brief",
+  "description": "Tighten the same template for executive buyers",
+  "version": "0.1.1",
+  "authoring": {
+    "mode": "agent-first",
+    "prompt": "Tighten the same template for executive buyers.\n@tone: executive concise\n@accent: #0F172A\n@accent-strong: #111827\n@surface: #F8FAFC\n@headline: Executive AI systems proposal\n@callout-title: Business outcome\n@callout-body: Faster delivery, fewer handoff errors, clearer ownership.\n@notes-body: Pricing assumes one primary workflow and one stakeholder review loop.\n@add-field: recipient.executive_sponsor:string\n",
+    "baseTemplateId": "daze-standard",
+    "directives": {
+      "accent": "#1d4ed8",
+      "accent-strong": "#0f172a",
+      "surface": "#eff6ff",
+      "shell": "#e2e8f0",
+      "ink": "#0f172a",
+      "layout": "split",
+      "tone": "Agent-authored template",
+      "doc-title": "Telegram Agent Brief Dokument",
+      "headline": "Angebot für {{recipient.company}}",
+      "intro": "Create a modern service offer template for AI workflow consulting.\n@tone: sharp and premium\n@layout: spotlight\n@accent: #5B5BD6\n@accent-strong: #2F2FA2\n@headline: AI workflow consulting proposal\n@callout-title: Scope snapshot\n@callout-body: Includes setup, iteration loops and operational handoff.\n@notes-title: Delivery model\n@notes-body: Async-first collaboration with weekly decision checkpoints.\n@closing: Reply with go and we schedule kickoff within 3 business days.\n@add-field: project.summary:string:required\n@add-field: recipient.department:string",
+      "callout-title": "Status",
+      "callout-body": "{{modeLabel}} | Netto im Startmonat {{sumNetFirstMonth_money}} | Ab {{secondMonthLabel}} {{sumNetRecurring_money}}",
+      "notes-title": "Hinweise",
+      "notes-body": "Dieses Dokument kann sofort mit Sample-Daten gerendert werden. Anpassungen an Text, Farben und Zusatzfeldern laufen weiter durch denselben Template-Pfad wie alle bestehenden Exporte.",
+      "closing": "Freundliche Grüße<br /><strong>{{sender.signee}}</strong>",
+      "add-field": [],
+      "remove-field": [],
+      "require-field": [],
+      "optional-field": []
+    }
+  }
+}

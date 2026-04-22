@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rechnungsvorlage {{offer_number}}</title>
+  <style>
+    @page { size: A4; margin: 16mm; }
+    body { margin: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #14213d; background: #ffffff; }
+    .page { width: 100%; }
+    .header { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: start; }
+    .eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; color: #6b7280; margin-bottom: 10px; }
+    .brand h1 { margin: 0; font-size: 36px; letter-spacing: 0.08em; }
+    .brand p { margin: 10px 0 0; line-height: 1.6; color: #475569; }
+    .recipient { border: 1px solid #dbe2ea; border-radius: 18px; padding: 18px; background: #f8fafc; }
+    .recipient strong { display: block; font-size: 17px; margin-bottom: 8px; }
+    .recipient div { line-height: 1.6; color: #334155; }
+    .overview { margin-top: 22px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+    .overview-card { border-radius: 16px; padding: 16px; background: #14213d; color: white; min-height: 92px; }
+    .overview-card.light { background: #e2e8f0; color: #0f172a; }
+    .overview-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; opacity: 0.72; }
+    .overview-value { margin-top: 14px; font-size: 22px; font-weight: 700; }
+    .intro { margin-top: 28px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; }
+    .intro-copy h2 { margin: 0 0 12px; font-size: 28px; }
+    .intro-copy p { margin: 0; line-height: 1.7; color: #475569; }
+    .callout { border-radius: 18px; background: #fff6db; color: #8a5b00; padding: 18px; border: 1px solid #f0d58a; }
+    .callout strong { display: block; font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 10px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 28px; }
+    th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: #64748b; padding: 0 0 10px; border-bottom: 1px solid #cbd5e1; }
+    td { padding: 14px 0; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+    .muted { color: #64748b; }
+    .num { text-align: right; white-space: nowrap; }
+    .totals { margin-top: 26px; margin-left: auto; width: 360px; border: 1px solid #dbe2ea; border-radius: 20px; overflow: hidden; break-inside: avoid; page-break-inside: avoid; }
+    .totals-row { display: flex; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: 1px solid #dbe2ea; background: #ffffff; }
+    .totals-row.strong { font-weight: 700; }
+    .totals-row.highlight { background: #14213d; color: white; font-size: 18px; font-weight: 700; }
+    .section-grid { margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; break-inside: avoid; page-break-inside: avoid; }
+    .section-card { border-radius: 18px; border: 1px solid #dbe2ea; padding: 18px; background: #f8fafc; }
+    .section-card h3 { margin: 0 0 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.1em; color: #0f172a; }
+    .section-card p { margin: 0; line-height: 1.7; color: #475569; }
+    .footer { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; font-size: 13px; color: #475569; break-inside: avoid; page-break-inside: avoid; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="header">
+      <div class="brand">
+        <div class="eyebrow">Invoice Standard Template</div>
+        <h1>{{sender.company}}</h1>
+        <p>
+          {{sender.address_line1}}<br />
+          {{sender.address_line2}}<br />
+          {{sender.country}}<br />
+          USt-IdNr. {{sender.ust_id}}
+        </p>
+      </div>
+      <div class="recipient">
+        <strong>{{recipient.company}}</strong>
+        <div>
+          {{recipient.contact_person}}<br />
+          {{recipient.street}}<br />
+          {{recipient.zip_city}}
+        </div>
+      </div>
+    </div>
+
+    <div class="overview">
+      <div class="overview-card">
+        <div class="overview-label">Dokument</div>
+        <div class="overview-value">{{offer_number}}</div>
+      </div>
+      <div class="overview-card light">
+        <div class="overview-label">Erstellt am</div>
+        <div class="overview-value">{{dateLabel}}</div>
+      </div>
+      <div class="overview-card light">
+        <div class="overview-label">Gültig bis</div>
+        <div class="overview-value">{{validUntilLabel}}</div>
+      </div>
+      <div class="overview-card">
+        <div class="overview-label">Wiederkehrend</div>
+        <div class="overview-value">{{totalRecurring_money}}</div>
+      </div>
+    </div>
+
+    <div class="intro">
+      <div class="intro-copy">
+        <h2>Leistungsübersicht für {{recipient.company}}</h2>
+        <p>Diese Vorlage trennt Einmal- und Folgekosten stärker vom Fließtext. Sie eignet sich als sachliche Angebots- oder Rechnungsbasis für agentische Template-Workflows, weil Struktur und Summenblock klar versionierbar im Dateisystem liegen.</p>
+      </div>
+      <div class="callout">
+        <strong>Status</strong>
+        {{modeLabel}}<br />
+        Netto im Startmonat: {{sumNetFirstMonth_money}}<br />
+        Ab {{secondMonthLabel}}: {{sumNetRecurring_money}}
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Leistung</th>
+          <th>Beschreibung</th>
+          <th class="num">Menge</th>
+          <th class="num">Preis</th>
+          <th class="num">Betrag</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Lizenz</td>
+          <td>DAZE {{license.name}}<br /><span class="muted">monatliche Nutzung und Betrieb</span></td>
+          <td class="num">1</td>
+          <td class="num">{{license.price_monthly_money}}</td>
+          <td class="num">{{licenseTotal_money}}</td>
+        </tr>
+        {{{discount_row_html}}}
+        <tr>
+          <td>Einrichtung</td>
+          <td>{{setup.description}}</td>
+          <td class="num">1</td>
+          <td class="num">{{setupTotal_money}}</td>
+          <td class="num">{{setupTotal_money}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="totals">
+      <div class="totals-row"><span>Netto {{firstMonthLabel}}</span><span>{{sumNetFirstMonth_money}}</span></div>
+      <div class="totals-row"><span>Umsatzsteuer 19%</span><span>{{vatFirstMonth_money}}</span></div>
+      <div class="totals-row highlight"><span>Gesamt Startmonat</span><span>{{totalFirstMonth_money}}</span></div>
+      <div class="totals-row strong"><span>Netto ab {{secondMonthLabel}}</span><span>{{sumNetRecurring_money}}</span></div>
+      <div class="totals-row"><span>Umsatzsteuer 19%</span><span>{{vatRecurring_money}}</span></div>
+      <div class="totals-row strong"><span>Gesamt wiederkehrend</span><span>{{totalRecurring_money}}</span></div>
+    </div>
+
+    <div class="section-grid">
+      <div class="section-card">
+        <h3>Leistungsrahmen</h3>
+        <p>Einrichtungskosten werden einmalig fakturiert. Der Lizenzbetrag deckt die operative Nutzung, Support und die fortlaufende Bereitstellung der gewählten Edition ab.</p>
+      </div>
+      <div class="section-card">
+        <h3>Nächster Schritt</h3>
+        <p>Bei Freigabe bereiten wir Onboarding, Stammdatenübernahme und Terminierung mit {{sender.signee}} vor. Rückfragen senden Sie an {{sender.email}}.</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>
+        <strong>{{sender.company}}</strong><br />
+        {{sender.address_line1}}<br />
+        {{sender.address_line2}}<br />
+        {{sender.country}}
+      </div>
+      <div>
+        Ansprechpartner: {{sender.signee}}<br />
+        Telefon: {{sender.phone}}<br />
+        E-Mail: {{sender.email}}<br />
+        Web: {{sender.web}}
+      </div>
+    </div>
+  </div>
+</body>
+</html>

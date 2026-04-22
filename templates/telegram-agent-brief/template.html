@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Telegram Agent Brief Dokument {{offer_number}}</title>
+  <style>
+    @page { size: A4; margin: 16mm; }
+    :root {
+      --accent: #1d4ed8;
+      --accent-strong: #0f172a;
+      --surface: #eff6ff;
+      --shell: #e2e8f0;
+      --ink: #0f172a;
+      --muted: #475569;
+      --line: #cbd5e1;
+      --paper: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: var(--paper); }
+    .page { width: 100%; display: grid; gap: 22px; }
+    .hero { display: grid; grid-template-columns: 1.25fr 0.95fr; gap: 22px; align-items: start; }
+    .page.spotlight .hero { grid-template-columns: 1fr; }
+    .page.compact { gap: 16px; }
+    .brand-shell { background: linear-gradient(160deg, var(--accent-strong), var(--accent)); color: white; border-radius: 24px; padding: 24px; }
+    .tone { display: inline-flex; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.16); text-transform: uppercase; font-size: 11px; letter-spacing: 0.16em; font-weight: 700; }
+    .brand-shell h1 { margin: 14px 0 10px; font-size: 34px; letter-spacing: 0.05em; }
+    .brand-shell p { margin: 0; line-height: 1.6; color: rgba(255,255,255,0.9); }
+    .recipient-shell { border: 1px solid var(--line); border-radius: 24px; padding: 22px; background: var(--surface); }
+    .recipient-shell strong { display: block; font-size: 20px; margin-bottom: 8px; }
+    .recipient-shell div { line-height: 1.7; color: var(--muted); }
+    .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+    .page.compact .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .stat { border-radius: 18px; padding: 16px; background: var(--shell); border: 1px solid var(--line); min-height: 92px; }
+    .stat strong { display: block; margin-top: 10px; font-size: 20px; color: var(--accent-strong); }
+    .eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); }
+    .content-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 22px; }
+    .page.spotlight .content-grid { grid-template-columns: 1fr; }
+    .lead h2 { margin: 0 0 12px; font-size: 30px; }
+    .lead p { margin: 0; line-height: 1.75; color: var(--muted); }
+    .panel { border: 1px solid var(--line); border-radius: 22px; padding: 18px; background: var(--paper); }
+    .panel h3 { margin: 0 0 10px; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-strong); }
+    .panel p { margin: 0; line-height: 1.7; color: var(--muted); }
+    .facts { display: grid; gap: 10px; }
+    .fact { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; border-top: 1px solid var(--line); padding-top: 10px; }
+    .fact:first-child { border-top: 0; padding-top: 0; }
+    .fact strong { color: var(--accent-strong); text-align: right; }
+    table { width: 100%; border-collapse: collapse; }
+    th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); padding: 0 0 10px; border-bottom: 1px solid var(--line); }
+    td { padding: 14px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .num { text-align: right; white-space: nowrap; }
+    .totals { width: min(100%, 360px); margin-left: auto; border-radius: 22px; overflow: hidden; border: 1px solid var(--line); break-inside: avoid; page-break-inside: avoid; }
+    .totals-row { display: flex; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: 1px solid var(--line); background: var(--paper); }
+    .totals-row.highlight { background: var(--accent-strong); color: white; font-size: 18px; font-weight: 700; }
+    .totals-row.strong { font-weight: 700; }
+    .tail { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; break-inside: avoid; page-break-inside: avoid; }
+    .page.spotlight .tail { grid-template-columns: 1fr; }
+    .closing { margin-top: 4px; }
+    .footer { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; font-size: 13px; color: var(--muted); break-inside: avoid; page-break-inside: avoid; }
+  </style>
+</head>
+<body>
+  <div class="page split">
+    <section class="hero">
+      <div class="brand-shell">
+        <div class="tone">Agent-authored template</div>
+        <h1>{{sender.company}}</h1>
+        <p>
+          {{sender.address_line1}}<br />
+          {{sender.address_line2}}<br />
+          {{sender.country}}<br />
+          USt-IdNr. {{sender.ust_id}}
+        </p>
+      </div>
+      <div class="recipient-shell">
+        <strong>{{recipient.company}}</strong>
+        <div>
+          {{recipient.contact_person}}<br />
+          {{recipient.street}}<br />
+          {{recipient.zip_city}}
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><div class="eyebrow">Dokument</div><strong>{{offer_number}}</strong></div>
+      <div class="stat"><div class="eyebrow">Erstellt am</div><strong>{{dateLabel}}</strong></div>
+      <div class="stat"><div class="eyebrow">Gültig bis</div><strong>{{validUntilLabel}}</strong></div>
+      <div class="stat"><div class="eyebrow">Wiederkehrend</div><strong>{{totalRecurring_money}}</strong></div>
+    </section>
+
+    <section class="content-grid">
+      <div class="lead">
+        <h2>Angebot für {{recipient.company}}</h2>
+        <p>Create a modern service offer template for AI workflow consulting.
+@tone: sharp and premium
+@layout: spotlight
+@accent: #5B5BD6
+@accent-strong: #2F2FA2
+@headline: AI workflow consulting proposal
+@callout-title: Scope snapshot
+@callout-body: Includes setup, iteration loops and operational handoff.
+@notes-title: Delivery model
+@notes-body: Async-first collaboration with weekly decision checkpoints.
+@closing: Reply with go and we schedule kickoff within 3 business days.
+@add-field: project.summary:string:required
+@add-field: recipient.department:string</p>
+      </div>
+      <div class="panel">
+        <h3>Status</h3>
+        <p>{{modeLabel}} | Netto im Startmonat {{sumNetFirstMonth_money}} | Ab {{secondMonthLabel}} {{sumNetRecurring_money}}</p>
+      </div>
+    </section>
+
+    
+
+    <section>
+      <table>
+        <thead>
+          <tr>
+            <th>Leistung</th>
+            <th>Beschreibung</th>
+            <th class="num">Menge</th>
+            <th class="num">Preis</th>
+            <th class="num">Betrag</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lizenz</td>
+            <td>DAZE {{license.name}}<br /><span style="color: var(--muted)">monatliche Nutzung und Betrieb</span></td>
+            <td class="num">1</td>
+            <td class="num">{{license.price_monthly_money}}</td>
+            <td class="num">{{licenseTotal_money}}</td>
+          </tr>
+          {{{discount_row_html}}}
+          <tr>
+            <td>Einrichtung</td>
+            <td>{{setup.description}}</td>
+            <td class="num">1</td>
+            <td class="num">{{setupTotal_money}}</td>
+            <td class="num">{{setupTotal_money}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="totals">
+      <div class="totals-row"><span>Netto {{firstMonthLabel}}</span><span>{{sumNetFirstMonth_money}}</span></div>
+      <div class="totals-row"><span>USt 19%</span><span>{{vatFirstMonth_money}}</span></div>
+      <div class="totals-row highlight"><span>Gesamt Startmonat</span><span>{{totalFirstMonth_money}}</span></div>
+      <div class="totals-row strong"><span>Netto ab {{secondMonthLabel}}</span><span>{{sumNetRecurring_money}}</span></div>
+      <div class="totals-row"><span>USt 19%</span><span>{{vatRecurring_money}}</span></div>
+      <div class="totals-row strong"><span>Gesamt wiederkehrend</span><span>{{totalRecurring_money}}</span></div>
+    </section>
+
+    <section class="tail">
+      <div class="panel">
+        <h3>Hinweise</h3>
+        <p>Dieses Dokument kann sofort mit Sample-Daten gerendert werden. Anpassungen an Text, Farben und Zusatzfeldern laufen weiter durch denselben Template-Pfad wie alle bestehenden Exporte.</p>
+      </div>
+      <div class="panel">
+        <h3>Nächster Schritt</h3>
+        <p class="closing">Freundliche Grüße<br /><strong>{{sender.signee}}</strong></p>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div>
+        <strong>{{sender.company}}</strong><br />
+        {{sender.address_line1}}<br />
+        {{sender.address_line2}}<br />
+        {{sender.country}}
+      </div>
+      <div>
+        Ansprechpartner: {{sender.signee}}<br />
+        Telefon: {{sender.phone}}<br />
+        E-Mail: {{sender.email}}<br />
+        Web: {{sender.web}}
+      </div>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Angebot 42011</title>
+  <style>
+    @page { size: A4; margin: 22mm 16mm 22mm 16mm; }
+    body { font-family: Arial, Helvetica, sans-serif; color: #1f2937; margin: 0; }
+    .page { width: 100%; }
+    .top { display:flex; justify-content:space-between; gap:24px; margin-bottom:32px; }
+    .brand { max-width: 45%; }
+    .brand h1 { margin:0; font-size:32px; color:#111827; letter-spacing:0.06em; }
+    .muted { color:#6b7280; line-height:1.5; }
+    .recipient { text-align:right; max-width:45%; }
+    .meta { margin: 16px 0 28px; display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:12px; }
+    .meta-card { background:#f3f4f6; padding:12px 14px; border-radius:12px; }
+    .meta-label { font-size:12px; text-transform:uppercase; color:#6b7280; letter-spacing:0.06em; }
+    .meta-value { font-size:18px; font-weight:700; color:#111827; margin-top:4px; }
+    .headline { margin: 10px 0 18px; }
+    .headline h2 { margin:0 0 8px; font-size:28px; }
+    .headline p { margin:0; color:#4b5563; }
+    table { width:100%; border-collapse:collapse; margin-top:18px; }
+    th, td { border-bottom:1px solid #d1d5db; padding:10px 8px; vertical-align:top; }
+    th { text-align:left; font-size:12px; text-transform:uppercase; color:#6b7280; letter-spacing:0.06em; }
+    .num { text-align:right; white-space:nowrap; }
+    .summary { width: 320px; margin-left:auto; margin-top:28px; break-inside: avoid; page-break-inside: avoid; }
+    .summary-row { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #e5e7eb; }
+    .summary-row.total { font-weight:700; font-size:18px; color:#111827; }
+    .box { background:#f9fafb; border:1px solid #e5e7eb; border-radius:16px; padding:18px; margin-top:26px; break-inside: avoid; page-break-inside: avoid; }
+    .notes-page { break-before: page; page-break-before: always; margin-top: 28px; }
+    .footer { margin-top:36px; display:grid; grid-template-columns:1fr 1fr; gap:18px; font-size:13px; color:#4b5563; break-inside: avoid; page-break-inside: avoid; }
+    .pill { display:inline-block; padding:6px 10px; border-radius:999px; background:#dbeafe; color:#1d4ed8; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="top">
+      <div class="brand">
+        <div class="pill">Rabatt-Angebot</div>
+        <h1>DAZE</h1>
+        <div class="muted">
+          Emil-Junghannß-Str. 5<br />
+          09376 Oelsnitz/Erzgeb.<br />
+          Deutschland<br />
+          USt-IdNr.: DE 141316905
+        </div>
+      </div>
+      <div class="recipient muted">
+        <strong>belafarm Beetzer Landwirtschaftsgesellschaft mbH</strong><br />
+        Frau Gansewig<br />
+        Beetzer Dorfstr. 166 a<br />
+        16766 Kremmen
+      </div>
+    </div>
+
+    <div class="meta">
+      <div class="meta-card">
+        <div class="meta-label">Angebotsnummer</div>
+        <div class="meta-value">42011</div>
+      </div>
+      <div class="meta-card">
+        <div class="meta-label">Angebotsdatum</div>
+        <div class="meta-value">21.04.2026</div>
+      </div>
+      <div class="meta-card">
+        <div class="meta-label">Gültig bis</div>
+        <div class="meta-value">05.05.2026</div>
+      </div>
+    </div>
+
+    <div class="headline">
+      <h2>Angebot für belafarm Beetzer Landwirtschaftsgesellschaft mbH</h2>
+      <p>Vielen Dank für Ihr Interesse an DAZE. Nachfolgend finden Sie unser Angebot für Lizenz, Einrichtung und den operativen Start Ihres Teams.</p>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Pos</th>
+          <th>Bezeichnung</th>
+          <th class="num">Menge</th>
+          <th class="num">Einzelpreis</th>
+          <th class="num">Gesamt</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Lizenz DAZE DAZE Professional<br /><span class="muted">monatlich zu zahlen</span></td>
+          <td class="num">1</td>
+          <td class="num">129,00 €</td>
+          <td class="num">109,65 €</td>
+        </tr>
+        <tr>
+        <td></td>
+        <td>Einführungsrabatt (15%)</td>
+        <td class="num">1</td>
+        <td class="num">-19,35 €</td>
+        <td class="num">-19,35 €</td>
+      </tr>
+        <tr>
+          <td>2</td>
+          <td>Einrichtungskosten*<br /><span class="muted">Enthält Einrichtung, Stammdatenimport und Konfiguration für den operativen Start direkt nach der Testphase.</span></td>
+          <td class="num">1</td>
+          <td class="num">249,00 €</td>
+          <td class="num">249,00 €</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="summary">
+      <div class="summary-row"><span>Summe Netto (April 2026)</span><span>358,65 €</span></div>
+      <div class="summary-row"><span>Umsatzsteuer 19%</span><span>68,14 €</span></div>
+      <div class="summary-row total"><span>Rechnungsbetrag</span><span>426,79 €</span></div>
+      <div class="summary-row" style="margin-top:18px;"><span>Netto ab Mai 2026</span><span>109,65 €</span></div>
+      <div class="summary-row"><span>Umsatzsteuer 19%</span><span>20,83 €</span></div>
+      <div class="summary-row total"><span>Monatlich wiederkehrend</span><span>130,48 €</span></div>
+    </div>
+
+    <div class="notes-page">
+      <div class="box">
+        <strong>Hinweis</strong>
+        <p>Dieses Angebot ist freibleibend und versteht sich zzgl. gesetzlicher Umsatzsteuer. Die Einrichtungskosten werden einmalig berechnet, die Lizenzkosten monatlich im Voraus.</p>
+        <p>* Enthält alle Anpassungen, die für den erfolgreichen Start Ihres Betriebs in DAZE notwendig sind.</p>
+      </div>
+
+      <div class="box">
+        <p>Wenn das für Sie passt, bereiten wir im nächsten Schritt direkt die Einführung und den Testzugang vor.</p>
+        <p>Freundliche Grüße<br /><strong>Max Mannstein</strong></p>
+      </div>
+
+      <div class="footer">
+        <div>
+          <strong>DAZE</strong><br />
+          Emil-Junghannß-Str. 5<br />
+          09376 Oelsnitz/Erzgeb.<br />
+          Deutschland
+        </div>
+        <div>
+          Tel. (+49) 17640418251<br />
+          support@dazeapp.de<br />
+          www.dazeapp.de<br />
+          USt-IdNr.: DE 141316905
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

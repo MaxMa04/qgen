@@ -1,0 +1,33 @@
+{
+  "offer_number": "42011",
+  "date": "2026-04-21",
+  "valid_until": "2026-05-05",
+  "recipient": {
+    "company": "belafarm Beetzer Landwirtschaftsgesellschaft mbH",
+    "contact_person": "Frau Gansewig",
+    "street": "Beetzer Dorfstr. 166 a",
+    "zip_city": "16766 Kremmen"
+  },
+  "license": {
+    "name": "DAZE Professional",
+    "price_monthly": 129,
+    "discount_percent": 15,
+    "discount_label": "Einführungsrabatt"
+  },
+  "setup": {
+    "enabled": true,
+    "price": 249,
+    "description": "Enthält Einrichtung, Stammdatenimport und Konfiguration für den operativen Start direkt nach der Testphase."
+  },
+  "sender": {
+    "company": "DAZE",
+    "address_line1": "Emil-Junghannß-Str. 5",
+    "address_line2": "09376 Oelsnitz/Erzgeb.",
+    "country": "Deutschland",
+    "ust_id": "DE 141316905",
+    "phone": "(+49) 17640418251",
+    "email": "support@dazeapp.de",
+    "web": "www.dazeapp.de",
+    "signee": "Max Mannstein"
+  }
+}
